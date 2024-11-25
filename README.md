@@ -8,8 +8,8 @@ This project is a web application that combines a Groovy-based backend with a Re
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
 - [Project Structure](#project-structure)
-- [Backend Configuration Overview (Groovy)](#backend-configuration-overview-%28groovy%29)
-- [Frontend (React)](#frontend-%28react%29) 
+- [Backend Configuration Overview (Groovy)](#backend-configuration-overview-groovy)
+- [Frontend (React)](#frontend-react)
 
 ## Technologies
 
@@ -46,7 +46,7 @@ http://localhost:3000
 - **front/**: Contains the React frontend code.
 - **docker-compose.yml**: Configuration for Docker services.
 
-### Backend Configuration Overview (Groovy)
+### ## Backend Configuration Overview
 
 The backend is built using Groovy and integrates with Spring Security for user authentication, Redis for session management, and WebSockets for real-time communication.
 
@@ -56,7 +56,7 @@ The backend is built using Groovy and integrates with Spring Security for user a
 - User Management: Uses a repository to handle user details, roles, and authentication. The service includes functionalities like registration, login, and profile updates.
 - WebSocket Chat: A real-time messaging feature using WebSockets, where authenticated users can send and receive messages.
 
-### Frontend (React)
+### Frontend Overview
 The frontend is built with React and communicates with the backend via REST APIs and WebSockets. It includes:
 
 - User Authentication: Forms for registration, login, and profile updates.
