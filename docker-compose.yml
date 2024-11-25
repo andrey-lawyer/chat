@@ -1,0 +1,55 @@
+services:
+  mongodb:
+    image: mongo:8.0.3
+    restart: always
+    container_name: mongodb
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - commonnetwork
+
+  redis:
+    image: redis:7.4-alpine
+    restart: always
+    container_name: redis
+    networks:
+      - commonnetwork
+
+  server:
+    image: andreylawyer/server-chat-service:v1.0
+#    build:
+#      context: ./back
+#      dockerfile: Dockerfile
+    environment:
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - commonnetwork
+
+  nginx:
+    image: andreylawyer/client-chat-service:v1.0
+#    build:
+#      context: ./front
+#      dockerfile: Dockerfile
+    container_name: nginx
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf  # Nginx configuration
+    depends_on:
+      - server
+    networks:
+      - commonnetwork
+    ports:
+      - "3000:80"
+
+networks:
+  commonnetwork:
+    driver: bridge
+
+volumes:
+  mongo-data:
+
+
