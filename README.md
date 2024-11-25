@@ -10,6 +10,7 @@ This project is a web application that combines a Groovy-based backend with a Re
 - [Project Structure](#project-structure)
 - [Backend Configuration Overview](#backend-configuration-overview)
 - [Frontend Overview](#frontend-overview)
+- [Testing Backend](#testing-backend)
 
 ## Technologies
 
@@ -50,6 +51,7 @@ http://localhost:3000
 
 The backend is built using Groovy and integrates with Spring Security for user authentication, Redis for session management, and WebSockets for real-time communication.
 
+- Reactive Design with WebFlux: Leverages WebFlux for efficient reactive streams, ensuring high-performance handling of WebSocket connections and API requests.
 - Security Configuration: Configures HTTP security with paths for authentication, user registration, and admin routes.
 - WebSocket Setup: A ChatWebSocketHandler to handle incoming and outgoing messages, with the possibility of broadcasting messages to connected clients.
 - Redis Integration: RedisTemplate and ReactiveRedisTemplate beans are used for managing user sessions and caching.
@@ -61,4 +63,8 @@ The frontend is built with React and communicates with the backend via REST APIs
 
 - User Authentication: Forms for registration, login, and profile updates.
 - WebSocket Integration: To manage real-time chat messages and notifications.
+
+## Testing Backend
+
+Integration and unit tests are implemented to check the service and user registration controller performance. The main testing stack includes JUnit 5, Spock (for Groovy tests), WebTestClient, and the use of MockBean to implement dependency stubs.
 

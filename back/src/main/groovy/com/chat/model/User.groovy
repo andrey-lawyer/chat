@@ -5,8 +5,6 @@ import lombok.Data
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
-//import org.springframework.security.core.GrantedAuthority
-//import org.springframework.security.core.authority.SimpleGrantedAuthority
 
 import java.time.Instant
 
@@ -27,9 +25,7 @@ class User {
 
     Instant registeredAt = Instant.now()
 
-//    Collection<? extends GrantedAuthority> getAuthorities() {
-//        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role));
-//    }
+
 }
 
 
