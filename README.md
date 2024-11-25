@@ -40,13 +40,13 @@ Once the containers are up and running, you can access the application at the fo
 
 http://localhost:3000
 
-### Project Structure
+## Project Structure
 
 - **back/**: Contains the Spring Boot backend code.
 - **front/**: Contains the React frontend code.
 - **docker-compose.yml**: Configuration for Docker services.
 
-### Backend Configuration Overview
+## Backend Configuration Overview
 
 The backend is built using Groovy and integrates with Spring Security for user authentication, Redis for session management, and WebSockets for real-time communication.
 
@@ -56,7 +56,7 @@ The backend is built using Groovy and integrates with Spring Security for user a
 - User Management: Uses a repository to handle user details, roles, and authentication. The service includes functionalities like registration, login, and profile updates.
 - WebSocket Chat: A real-time messaging feature using WebSockets, where authenticated users can send and receive messages.
 
-### Frontend Overview
+## Frontend Overview
 The frontend is built with React and communicates with the backend via REST APIs and WebSockets. It includes:
 
 - User Authentication: Forms for registration, login, and profile updates.
