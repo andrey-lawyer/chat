@@ -3,6 +3,8 @@ services:
     image: mongo:8.0.3
     restart: always
     container_name: mongodb
+    ports:
+      - "27017:27017"
     volumes:
       - mongo-data:/data/db
     networks:
@@ -12,6 +14,8 @@ services:
     image: redis:7.4-alpine
     restart: always
     container_name: redis
+    ports:
+      - "6379:6379"
     networks:
       - commonnetwork
 
